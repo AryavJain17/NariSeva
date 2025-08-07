@@ -1,0 +1,392 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Container */
+.emotion-app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 25%, #7c3aed 50%, #c026d3 100%);
+  padding: 2rem 1rem;
+}
+
+.emotion-main-content {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.emotion-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.emotion-header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.emotion-header-icon {
+  font-size: 3rem;
+  margin-right: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.emotion-main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.emotion-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.emotion-empowerment-message {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+/* Detection Container */
+.emotion-detection-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.emotion-video-section,
+.emotion-analysis-section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emotion-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.emotion-section-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.emotion-camera-icon,
+.emotion-analysis-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.emotion-face-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.emotion-face-status.face-detected {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: 1px solid #10b981;
+}
+
+.emotion-face-status.no-face {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #ef4444;
+}
+
+.status-icon {
+  font-size: 1rem;
+}
+
+/* Video Styles */
+.emotion-video-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.emotion-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.emotion-video.face-detected {
+  border: 3px solid #10b981;
+}
+
+.emotion-video.no-face {
+  border: 3px solid #ef4444;
+}
+
+/* Canvas Styles */
+.emotion-canvas-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.emotion-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #f8fafc;
+}
+
+.emotion-processing-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.emotion-processing-spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Chart Section */
+.emotion-chart-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.emotion-generate-button {
+  background: linear-gradient(135deg, #1e40af, #7c3aed);
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
+  transition: all 0.3s ease;
+}
+
+.emotion-generate-button:hover {
+  background: linear-gradient(135deg, #1e3a8a, #6b21a8);
+  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.4);
+  transform: translateY(-2px);
+}
+
+.emotion-generate-button:active {
+  transform: translateY(0);
+}
+
+.button-icon {
+  font-size: 1.25rem;
+}
+
+/* Chart Container */
+.emotion-chart-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emotion-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.emotion-chart-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.chart-icon {
+  font-size: 1.75rem;
+  margin-right: 0.75rem;
+}
+
+.emotion-dominant-badge {
+  background: linear-gradient(135deg, #1e40af, #7c3aed);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.emotion-chart-wrapper {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .emotion-detection-container {
+    grid-template-columns: 1fr;
+  }
+
+  .emotion-chart-wrapper svg {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .emotion-app-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .emotion-main-title {
+    font-size: 2.25rem;
+  }
+
+  .emotion-header-title {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .emotion-header-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .emotion-video-section,
+  .emotion-analysis-section {
+    padding: 1rem;
+  }
+
+  .emotion-chart-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .emotion-main-title {
+    font-size: 1.875rem;
+  }
+
+  .emotion-empowerment-message {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .emotion-section-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .emotion-generate-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .emotion-chart-container {
+    padding: 1rem;
+  }
+
+  .emotion-chart-wrapper svg {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+/* Animation for smooth transitions */
+.emotion-video,
+.emotion-canvas,
+.emotion-face-status {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effects */
+.emotion-video-section:hover,
+.emotion-analysis-section:hover,
+.emotion-chart-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.35);
+}
+
+/* Focus states for accessibility */
+.emotion-generate-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.5);
+}
