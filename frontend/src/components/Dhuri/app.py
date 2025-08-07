@@ -40,14 +40,14 @@ logger = logging.getLogger(__name__)
 # ----------- Configuration -----------
 TESSERACT_PATH = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 OUTPUT_FOLDER = "generated_reports"
-GEMINI_API_KEY = "AIzaSyBqVOV8quNcRTp03PgY7IjOmVsjHhDpEd8"
+GEMINI_API_KEY = ""
 
 # SMTP Configuration
 SMTP_CONFIG = {
     'host': 'smtp.gmail.com',
     'port': 587,
     'sender_email': 'aryavjain1708@gmail.com',
-    'sender_password': 'whwkkfyvdzjzmwuu'
+    'sender_password': ''
 }
 
 # ----------- Setup -----------
